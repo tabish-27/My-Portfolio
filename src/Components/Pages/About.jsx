@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import { FaReact, FaNodeJs, FaPhp, FaAws, FaHtml5, FaCss3Alt, FaSitemap } from "react-icons/fa";
-import { SiMongodb, SiLeetcode, SiJavascript, SiTypescript, SiRedis, SiC, SiCplusplus, SiTailwindcss, SiExpress } from "react-icons/si";
+import { SiMongodb, SiLeetcode, SiJavascript, SiTypescript, SiRedis, SiCplusplus, SiTailwindcss, SiExpress } from "react-icons/si";
 import { FiGlobe } from "react-icons/fi";
 
 const About = () => {
   const techBadges = [
-    { icon: <SiC className="text-blue-400 text-xl" />, text: "C" },
     { icon: <SiCplusplus className="text-blue-500 text-xl" />, text: "C++" },
     { icon: <FaHtml5 className="text-orange-500 text-xl" />, text: "HTML5" },
     { icon: <FaCss3Alt className="text-blue-400 text-xl" />, text: "CSS3" },

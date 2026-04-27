@@ -1,14 +1,14 @@
 const projects = {
   allProject: [
-    // ─── PROFESSIONAL PROJECTS ───────────────────────────────────────────
+    // ─── PROFESSIONAL PROJECTS (9) ────────────────────────────────────────
     {
       image: "https://myhireshield.com/og-image.png",
       title: "MyHireShield | MERN SAAS Platform",
       description:
-        "Architected a scalable MERN SAAS hiring platform with RBAC supporting 500+ active users. Deployed on Ubuntu VPS via Nginx Reverse Proxy & PM2. Engineered secure auth using JWT HTTP-only cookies, MongoDB sanitization, and rate-limiting across 15+ RESTful API portals — achieving zero reported security breaches post-launch.",
+        "Architected a scalable MERN SAAS hiring platform with RBAC supporting 500+ active users. Deployed on Ubuntu VPS via Nginx Reverse Proxy & PM2. JWT HTTP-only cookies, MongoDB sanitization, and rate-limiting — zero security breaches post-launch.",
       sourcecode: "https://github.com/tabish-27",
       livelink: "https://myhireshield.com/",
-      teckstack: ["MERN Stack", "JWT", "RBAC", "Nginx", "PM2", "Ubuntu VPS", "Rate Limiting", "MongoDB"],
+      teckstack: ["MERN Stack", "JWT", "RBAC", "Nginx", "PM2", "Ubuntu VPS", "Rate Limiting"],
       status: "LIVE",
       category: "professional",
       period: "Jan 2026 – Present",
@@ -16,9 +16,9 @@ const projects = {
     },
     {
       image: "https://uk-international.in/assets/og.png",
-      title: "UK International Course Shop | EdTech Marketplace",
+      title: "UK International Course Shop | EdTech E-commerce",
       description:
-        "Engineered an EdTech E-commerce Marketplace in PHP with automated checkout flows, reducing manual onboarding by 90% and processing 100+ monthly transactions. Integrated Razorpay Payment Gateway (EMI & Full Payment), automated receipt generation via PHPMailer, and Interakt WhatsApp API — cutting support queries by 60%.",
+        "Full EdTech marketplace in PHP with automated checkout, Razorpay Payment Gateway (EMI & Full Payment), automated receipt generation via PHPMailer, and Interakt WhatsApp API. Reduced manual onboarding by 90%, processing 100+ monthly transactions.",
       sourcecode: "https://github.com/tabish-27",
       livelink: "https://uk-international.in/",
       teckstack: ["PHP", "Razorpay", "PHPMailer", "WhatsApp API", "MySQL", "MVC"],
@@ -29,23 +29,101 @@ const projects = {
     },
     {
       image: "https://www.ukinternationalbeautyschool.com/og.png",
-      title: "UK International Lead Engine | React + Google Ads",
+      title: "UK International Lead Engine | Google Ads React App",
       description:
-        "Built the company's Primary Lead Engine in React handling 10,000+ monthly high-intent leads from Google Ads. Achieved 90+ Lighthouse performance score. Implemented custom JS-based enquiry chatbots and optimized SEO structures, boosting organic reach by 40% with 100% device responsiveness.",
+        "Company's primary Lead Engine in React handling 10,000+ monthly high-intent leads from Google Ads. Achieved 90+ Lighthouse score. Custom JS enquiry chatbots, optimized SEO structures boosting organic reach by 40%.",
       sourcecode: "https://github.com/tabish-27",
       livelink: "https://www.ukinternationalbeautyschool.com/",
-      teckstack: ["React", "Tailwind CSS", "Google Ads", "SEO", "Lighthouse", "Custom Chatbot"],
+      teckstack: ["React", "Tailwind CSS", "Google Ads", "SEO", "Lighthouse", "Chatbot"],
       status: "LIVE",
       category: "professional",
       period: "Sep 2025 – Nov 2025",
       type: "Lead Engine",
     },
-    // ─── PERSONAL PROJECTS ───────────────────────────────────────────────
+    {
+      image: "",
+      title: "UK Beauty School | Landing Page",
+      description:
+        "High-converting landing page for UK Beauty School with lead capture forms, course highlights, and Google Ads integration. Optimized for mobile-first experience and fast load times.",
+      sourcecode: "https://github.com/tabish-27",
+      livelink: "https://ukbeautyschool.com/",
+      teckstack: ["HTML5", "CSS3", "JavaScript", "Google Ads", "SEO"],
+      status: "LIVE",
+      category: "professional",
+      period: "2025",
+      type: "Landing Page",
+    },
+    {
+      image: "",
+      title: "B.Voc Beauty & Wellness | Landing Page",
+      description:
+        "Professional landing page for B.Voc Beauty & Wellness program with course details, inquiry forms, and lead generation pipeline integrated with CRM for automated follow-ups.",
+      sourcecode: "https://github.com/tabish-27",
+      livelink: "https://bvocbeautyandwellness.com/",
+      teckstack: ["HTML5", "CSS3", "JavaScript", "CRM Integration", "SEO"],
+      status: "LIVE",
+      category: "professional",
+      period: "2025",
+      type: "Landing Page",
+    },
+    {
+      image: "",
+      title: "UK Beauty Studio | Service Website",
+      description:
+        "Full service website for UK Beauty Studio showcasing treatments, pricing, booking flows, and gallery. Built with smooth animations, responsive design, and integrated inquiry management.",
+      sourcecode: "https://github.com/tabish-27",
+      livelink: "https://ukbeautystudio.com/",
+      teckstack: ["React", "Tailwind CSS", "Framer Motion", "SEO"],
+      status: "LIVE",
+      category: "professional",
+      period: "2025",
+      type: "Service Website",
+    },
+    {
+      image: "",
+      title: "Sapno Ka Saudagar | Event Landing Page",
+      description:
+        "Dynamic event landing page for Sapno Ka Saudagar with countdown timer, speaker profiles, registration flow, and social sharing. Optimized for viral reach and high conversion.",
+      sourcecode: "https://github.com/tabish-27",
+      livelink: "https://sapnoksaudagar.com/",
+      teckstack: ["HTML5", "CSS3", "JavaScript", "Animations"],
+      status: "LIVE",
+      category: "professional",
+      period: "2025",
+      type: "Event Page",
+    },
+    {
+      image: "",
+      title: "Help & Care | NGO Website",
+      description:
+        "Full NGO website for Help & Care with donation flows, volunteer registration, campaign showcases, and impact statistics. Built with accessibility and SEO best practices for maximum reach.",
+      sourcecode: "https://github.com/tabish-27",
+      livelink: "https://helpandcare.org.in/",
+      teckstack: ["HTML5", "CSS3", "JavaScript", "SEO", "Accessibility"],
+      status: "LIVE",
+      category: "professional",
+      period: "2025",
+      type: "NGO Website",
+    },
+    {
+      image: "",
+      title: "Branch GMB Review Portals | Firebase",
+      description:
+        "Firebase-powered review collection portals for 5 UKIBS branch locations (Noida, Patna, Lajpat Nagar, R.K. Puram, Rajouri Garden) — making it easy for students to submit Google My Business reviews from each branch.",
+      sourcecode: "https://github.com/tabish-27",
+      livelink: "https://noida.uk-international.in/",
+      teckstack: ["Firebase", "React", "Tailwind CSS", "GMB", "Sub-domains"],
+      status: "LIVE",
+      category: "professional",
+      period: "2025",
+      type: "Internal Tool",
+    },
+    // ─── PERSONAL PROJECTS (3) ───────────────────────────────────────────
     {
       image: "/codecompete-screenshot.png",
       title: "CodeCompete | Competitive Coding Platform",
       description:
-        "Interactive coding competition platform allowing users to participate in topic-specific contests, create private groups, and track rankings locally and globally. Ensures fairness with randomly assigned questions and flexible contest timing. Features real-time updates via Socket.io.",
+        "Interactive coding competition platform allowing users to participate in topic-specific contests, create private groups, and track rankings locally and globally. Real-time updates via Socket.io.",
       sourcecode: "https://github.com/tabish-27/CodeCompete.git",
       livelink: "https://code-compete-v.vercel.app/",
       teckstack: ["React", "Tailwind CSS", "Material-UI", "Node.js", "Express.js", "MongoDB", "Socket.io"],
@@ -58,7 +136,7 @@ const projects = {
       image: "/food-zaika-screenshot.png",
       title: "Food Zaika | Food Delivery App",
       description:
-        "Modern, responsive food delivery web application. Features real-time search, dark/light theme toggle, cart management with Redux, location-based restaurant discovery, infinite scroll, and PWA support. Mobile-first design with seamless ordering experience.",
+        "Modern food delivery web app with real-time search, dark/light theme toggle, cart management with Redux, location-based restaurant discovery, infinite scroll, and PWA support.",
       sourcecode: "https://github.com/tabish-27/Food-Zaika.git",
       livelink: "https://food-zaika.vercel.app/",
       teckstack: ["React", "Tailwind CSS", "Redux Toolkit", "PWA"],
@@ -71,7 +149,7 @@ const projects = {
       image: "/piclingo-screenshot.png",
       title: "PicLingo | AI Image Caption Engine",
       description:
-        "AI-powered image caption recommendation system using CLIP for image and text understanding. Extracts feature vectors, computes cosine similarity, and ranks the most relevant captions. Ideal for content recommendation, image search, and automated tagging.",
+        "AI-powered image caption recommendation system using CLIP for image/text understanding. Extracts feature vectors, computes cosine similarity, and ranks the most relevant captions.",
       sourcecode: "https://github.com/tabish-27/PicLingo.git",
       livelink: "https://pic-lingo.vercel.app/",
       teckstack: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "CLIP AI", "ML"],

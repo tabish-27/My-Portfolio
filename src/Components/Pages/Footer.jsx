@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { FaLinkedin, FaGithub, FaEnvelope, FaArrowUp } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaArrowUp, FaWhatsapp } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-import { FaXTwitter } from "react-icons/fa6";
 
 // Track real page visits using localStorage
 const getVisitCount = () => {
@@ -28,9 +27,9 @@ const Footer = () => {
           {[
             { href: "https://www.linkedin.com/in/tabish-javed/", icon: <FaLinkedin size={18} />, label: "LinkedIn", color: "hover:bg-blue-600/30 hover:border-blue-500/50" },
             { href: "https://github.com/tabish-27", icon: <FaGithub size={18} />, label: "GitHub", color: "hover:bg-gray-600/30 hover:border-gray-500/50" },
+            { href: "https://wa.me/917268854610", icon: <FaWhatsapp size={18} />, label: "WhatsApp", color: "hover:bg-green-600/30 hover:border-green-500/50" },
             { href: "mailto:tabishjaved2030@gmail.com", icon: <FaEnvelope size={18} />, label: "Email", color: "hover:bg-red-600/30 hover:border-red-500/50" },
             { href: "https://leetcode.com/u/Tabish_javed/", icon: <SiLeetcode size={18} />, label: "LeetCode", color: "hover:bg-orange-600/30 hover:border-orange-500/50" },
-            { href: "https://x.com/TabishJaved27", icon: <FaXTwitter size={18} />, label: "X / Twitter", color: "hover:bg-gray-600/30 hover:border-gray-500/50" },
           ].map(({ href, icon, label, color }) => (
             <a
               key={label}
