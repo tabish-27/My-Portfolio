@@ -1,18 +1,25 @@
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaPhp, FaAws } from "react-icons/fa";
-import { SiMongodb, SiLeetcode, SiJavascript, SiTypescript, SiRedis } from "react-icons/si";
+import { FaReact, FaNodeJs, FaPhp, FaAws, FaHtml5, FaCss3Alt, FaSitemap } from "react-icons/fa";
+import { SiMongodb, SiLeetcode, SiJavascript, SiTypescript, SiRedis, SiC, SiCplusplus, SiTailwindcss, SiExpress } from "react-icons/si";
 import { FiGlobe } from "react-icons/fi";
 
 const About = () => {
   const techBadges = [
+    { icon: <SiC className="text-blue-400 text-xl" />, text: "C" },
+    { icon: <SiCplusplus className="text-blue-500 text-xl" />, text: "C++" },
+    { icon: <FaHtml5 className="text-orange-500 text-xl" />, text: "HTML5" },
+    { icon: <FaCss3Alt className="text-blue-400 text-xl" />, text: "CSS3" },
     { icon: <SiJavascript className="text-yellow-400 text-xl" />, text: "JavaScript" },
-    { icon: <FaReact className="text-blue-400 text-xl" />, text: "React" },
-    { icon: <FaNodeJs className="text-green-400 text-xl" />, text: "Node.js" },
-    { icon: <SiMongodb className="text-green-500 text-xl" />, text: "MongoDB" },
-    { icon: <FaPhp className="text-indigo-400 text-xl" />, text: "PHP" },
-    { icon: <FaAws className="text-orange-400 text-xl" />, text: "AWS" },
     { icon: <SiTypescript className="text-blue-500 text-xl" />, text: "TypeScript" },
+    { icon: <FaReact className="text-cyan-400 text-xl" />, text: "React" },
+    { icon: <SiTailwindcss className="text-cyan-400 text-xl" />, text: "Tailwind CSS" },
+    { icon: <SiExpress className="text-gray-300 text-xl" />, text: "Express.js" },
+    { icon: <FaNodeJs className="text-green-400 text-xl" />, text: "Node.js" },
+    { icon: <FaPhp className="text-indigo-400 text-xl" />, text: "PHP" },
+    { icon: <SiMongodb className="text-green-500 text-xl" />, text: "MongoDB" },
     { icon: <SiRedis className="text-red-400 text-xl" />, text: "Redis" },
+    { icon: <FaAws className="text-orange-400 text-xl" />, text: "AWS" },
+    { icon: <FaSitemap className="text-purple-400 text-xl" />, text: "System Design" },
     { icon: <SiLeetcode className="text-orange-400 text-xl" />, text: "LeetCode" },
   ];
 
