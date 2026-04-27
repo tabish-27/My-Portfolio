@@ -1,8 +1,8 @@
 const projects = {
   allProject: [
-    // ─── PROFESSIONAL PROJECTS (9) ────────────────────────────────────────
+    // ─── PROFESSIONAL PROJECTS (6) ────────────────────────────────────────
     {
-      image: "https://myhireshield.com/og-image.png",
+      image: "/myhireshield-thumb.png",
       title: "MyHireShield | MERN SAAS Platform",
       description:
         "Architected a scalable MERN SAAS hiring platform with RBAC supporting 500+ active users. Deployed on Ubuntu VPS via Nginx Reverse Proxy & PM2. JWT HTTP-only cookies, MongoDB sanitization, and rate-limiting — zero security breaches post-launch.",
@@ -15,7 +15,7 @@ const projects = {
       type: "SAAS Platform",
     },
     {
-      image: "https://uk-international.in/assets/og.png",
+      image: "/uk-international.in-thumb.png",
       title: "UK International Course Shop | EdTech E-commerce",
       description:
         "Full EdTech marketplace in PHP with automated checkout, Razorpay Payment Gateway (EMI & Full Payment), automated receipt generation via PHPMailer, and Interakt WhatsApp API. Reduced manual onboarding by 90%, processing 100+ monthly transactions.",
@@ -28,7 +28,7 @@ const projects = {
       type: "E-commerce",
     },
     {
-      image: "https://www.ukinternationalbeautyschool.com/og.png",
+      image: "/ukinternationalbeautyschool.com-thumb.png",
       title: "UK International Lead Engine | Google Ads React App",
       description:
         "Company's primary Lead Engine in React handling 10,000+ monthly high-intent leads from Google Ads. Achieved 90+ Lighthouse score. Custom JS enquiry chatbots, optimized SEO structures boosting organic reach by 40%.",
@@ -41,7 +41,7 @@ const projects = {
       type: "Lead Engine",
     },
     {
-      image: "",
+      image: "/ukbeautyschool-thumb.png",
       title: "UK Beauty School | Landing Page",
       description:
         "High-converting landing page for UK Beauty School with lead capture forms, course highlights, and Google Ads integration. Optimized for mobile-first experience and fast load times.",
@@ -54,20 +54,7 @@ const projects = {
       type: "Landing Page",
     },
     {
-      image: "",
-      title: "B.Voc Beauty & Wellness | Landing Page",
-      description:
-        "Professional landing page for B.Voc Beauty & Wellness program with course details, inquiry forms, and lead generation pipeline integrated with CRM for automated follow-ups.",
-      sourcecode: "https://github.com/tabish-27",
-      livelink: "https://bvocbeautyandwellness.com/",
-      teckstack: ["HTML5", "CSS3", "JavaScript", "CRM Integration", "SEO"],
-      status: "LIVE",
-      category: "professional",
-      period: "2025",
-      type: "Landing Page",
-    },
-    {
-      image: "",
+      image: "/ukbeautystudio-thumb.png",
       title: "UK Beauty Studio | Service Website",
       description:
         "Full service website for UK Beauty Studio showcasing treatments, pricing, booking flows, and gallery. Built with smooth animations, responsive design, and integrated inquiry management.",
@@ -80,7 +67,7 @@ const projects = {
       type: "Service Website",
     },
     {
-      image: "",
+      image: "/sapnoksaudagar-thumb.png",
       title: "Sapno Ka Saudagar | Event Landing Page",
       description:
         "Dynamic event landing page for Sapno Ka Saudagar with countdown timer, speaker profiles, registration flow, and social sharing. Optimized for viral reach and high conversion.",
@@ -91,32 +78,6 @@ const projects = {
       category: "professional",
       period: "2025",
       type: "Event Page",
-    },
-    {
-      image: "",
-      title: "Help & Care | NGO Website",
-      description:
-        "Full NGO website for Help & Care with donation flows, volunteer registration, campaign showcases, and impact statistics. Built with accessibility and SEO best practices for maximum reach.",
-      sourcecode: "https://github.com/tabish-27",
-      livelink: "https://helpandcare.org.in/",
-      teckstack: ["HTML5", "CSS3", "JavaScript", "SEO", "Accessibility"],
-      status: "LIVE",
-      category: "professional",
-      period: "2025",
-      type: "NGO Website",
-    },
-    {
-      image: "",
-      title: "Branch GMB Review Portals | Firebase",
-      description:
-        "Firebase-powered review collection portals for 5 UKIBS branch locations (Noida, Patna, Lajpat Nagar, R.K. Puram, Rajouri Garden) — making it easy for students to submit Google My Business reviews from each branch.",
-      sourcecode: "https://github.com/tabish-27",
-      livelink: "https://noida.uk-international.in/",
-      teckstack: ["Firebase", "React", "Tailwind CSS", "GMB", "Sub-domains"],
-      status: "LIVE",
-      category: "professional",
-      period: "2025",
-      type: "Internal Tool",
     },
     // ─── PERSONAL PROJECTS (3) ───────────────────────────────────────────
     {
