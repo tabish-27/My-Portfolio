@@ -9,9 +9,13 @@ import {
   FiGithub,
   FiLinkedin,
   FiMail,
+  FiMessageCircle,
   FiMapPin,
   FiMenu,
+  FiPhone,
   FiX,
+  FiVolume2,
+  FiVolumeX,
 } from 'react-icons/fi'
 import { FaBriefcase, FaCode, FaGlobe, FaUsers, FaShieldAlt } from 'react-icons/fa'
 import { SiLeetcode } from 'react-icons/si'
@@ -28,24 +32,31 @@ const navLinks = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
+  { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'contact', label: 'Contact' },
 ]
 
-const skills = [
-  'React',
-  'TypeScript',
-  'Node.js',
-  'Express',
-  'MongoDB',
-  'PHP',
-  'AWS',
-  'Nginx',
-  'Redis',
-  'PostgreSQL',
-  'Tailwind CSS',
-  'GitHub Actions',
+const skillCategories = [
+  {
+    title: 'Languages & frontend',
+    skills: ['C', 'C++', 'JavaScript (ES6+)', 'TypeScript', 'HTML5', 'CSS3', 'React', 'Next.js', 'Tailwind CSS'],
+  },
+  {
+    title: 'Backend & data',
+    skills: ['Node.js', 'Express.js', 'PHP', 'MongoDB (NoSQL)', 'MySQL', 'PostgreSQL', 'Redis', 'REST APIs'],
+  },
+  {
+    title: 'Motion & 3D',
+    skills: ['GSAP', 'Three.js', 'React Three Fiber (R3F)', 'Rive', 'Motion', 'Lenis'],
+  },
+  {
+    title: 'Tools & delivery',
+    skills: ['Docker', 'Hostinger', 'Vercel', 'AWS', 'CI/CD', 'GitHub Actions', 'Nginx', 'PM2', 'Git & GitHub'],
+  },
 ]
+
+const skills = skillCategories.flatMap(({ skills: categorySkills }) => categorySkills)
 
 const impact = [
   { icon: <FiCode />, value: '15+', label: 'production domains' },
@@ -67,7 +78,7 @@ const experienceHighlights = [
   'Delivered production systems across 15+ domains, including five location-specific branch experiences.',
 ]
 
-function Header() {
+function Header({ soundEnabled, onToggleSound }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
 
@@ -122,6 +133,18 @@ function Header() {
           </a>
         ))}
       </nav>
+
+      <button
+        className={`sound-toggle${soundEnabled ? ' is-on' : ''}`}
+        type="button"
+        aria-label={`Turn click sounds ${soundEnabled ? 'off' : 'on'}`}
+        aria-pressed={soundEnabled}
+        title="Toggle click sounds"
+        onClick={onToggleSound}
+      >
+        {soundEnabled ? <FiVolume2 /> : <FiVolumeX />}
+        <span className="sound-toggle-label">Sound {soundEnabled ? 'on' : 'off'}</span>
+      </button>
 
       <Motion.a
         className="header-cta"
@@ -304,7 +327,7 @@ function About() {
             and the tiny details that make a product feel considered.
           </p>
           <div className="skills-list" aria-label="Core technologies" style={{ marginTop: 24 }}>
-            {skills.map((skill) => (
+            {skills.slice(0, 12).map((skill) => (
               <span className="skill-chip" key={skill}><span />{skill}</span>
             ))}
           </div>
@@ -312,7 +335,7 @@ function About() {
 
         <div className="about-facts">
           {[
-            { value: '2+', label: 'years shipping production software' },
+            { value: '1.3', label: 'years shipping production software' },
             { value: '15+', label: 'live domains delivered' },
             { value: '10k+', label: 'monthly users reached' },
             { value: '90+', label: 'Lighthouse performance score' },
@@ -352,7 +375,6 @@ function Experience() {
 
       <article className="surface-card experience-card" data-reveal>
         <div className="experience-meta">
-          <small>Sep 2024 — Present</small>
           <strong>UK International</strong>
           <span>UKIBS India Pvt. Ltd.</span>
           <span className="experience-location"><FiMapPin /> Noida, India</span>
@@ -360,11 +382,36 @@ function Experience() {
         <div className="experience-details">
           <h3>Full Stack Web Developer</h3>
           <span className="experience-location">Full-time · Product engineering</span>
-          <ul>
+          <ul data-gsap-stagger>
             {experienceHighlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
           </ul>
         </div>
       </article>
+    </section>
+  )
+}
+
+function Skills() {
+  return (
+    <section className="page-section" id="skills">
+      <SectionHeading
+        eyebrow="Tools in my toolkit"
+        title={<>A broad toolkit,<br />built through real work.</>}
+        description="Languages, product engineering, data, and motion tools I have worked with across shipped projects."
+      />
+
+      <div className="skill-groups" data-gsap-stagger>
+        {skillCategories.map((category) => (
+          <article className="surface-card skill-category" key={category.title}>
+            <h3>{category.title}</h3>
+            <div className="skills-list">
+              {category.skills.map((skill) => (
+                <span className="skill-chip" key={skill}><span />{skill}</span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
     </section>
   )
 }
@@ -419,9 +466,23 @@ function Projects() {
               whileHover={{ y: -5 }}
             >
               <div className="project-image-wrap">
-                <img src={project.image} alt={`${project.title} project preview`} loading="lazy" />
+                {project.image ? (
+                  <img src={project.image} alt={`${project.title} project preview`} loading="lazy" />
+                ) : (
+                  <div
+                    className="project-preview-placeholder"
+                    role="img"
+                    aria-label={`${project.title} preview`}
+                  >
+                    <span className="project-preview-mark">{project.previewMark}</span>
+                    <strong>{project.previewTitle}</strong>
+                    <small>{project.teckstack.slice(0, 3).join(' · ')}</small>
+                  </div>
+                )}
                 <span className="project-type">{project.type}</span>
-                <span className="project-status">Live</span>
+                <span className={`project-status${project.status === 'PRIVATE' ? ' is-private' : ''}`}>
+                  {project.status || 'LIVE'}
+                </span>
               </div>
               <div className="project-info">
                 <div className="project-info-top">
@@ -437,10 +498,12 @@ function Projects() {
                   {project.teckstack.length > 5 && <span>+{project.teckstack.length - 5}</span>}
                 </div>
                 <div className="project-links">
-                  {project.category === 'personal' ? (
+                  {project.sourcecode ? (
                     <a href={project.sourcecode} target="_blank" rel="noreferrer"><FiGithub /> Source code</a>
                   ) : (
-                    <span className="project-period">{project.category} project</span>
+                    <span className="project-period">
+                      {project.status === 'PRIVATE' ? 'Private codebase' : `${project.category} project`}
+                    </span>
                   )}
                   {project.livelink && (
                     <a href={project.livelink} target="_blank" rel="noreferrer">Visit live <FiExternalLink /></a>
@@ -526,20 +589,78 @@ function Contact() {
   return (
     <section className="page-section contact-section" id="contact">
       <div className="contact-panel" data-reveal>
-        <span className="section-kicker"><span className="eyebrow-dot" />Have a good one in mind?</span>
-        <h2>Let&apos;s make<br />something matter.</h2>
-        <p>
-          Have a product to build, a problem to untangle, or a team looking for a thoughtful
-          engineer? I&apos;d love to hear what you&apos;re working on.
-        </p>
-        <Motion.a
-          className="button-primary"
-          href="mailto:tabishjaved2030@gmail.com"
-          whileHover={{ y: -3 }}
-          whileTap={{ scale: 0.97 }}
+        <div className="contact-copy">
+          <span className="section-kicker"><span className="eyebrow-dot" />Have a good one in mind?</span>
+          <h2>Let&apos;s make<br />something matter.</h2>
+          <p>
+            Have a product to build, a problem to untangle, or a team looking for a thoughtful
+            engineer? I&apos;d love to hear what you&apos;re working on.
+          </p>
+          <div className="contact-links">
+            <a href="mailto:tabishjaved2030@gmail.com">
+              <FiMail />
+              <span>Email <small>tabishjaved2030@gmail.com</small></span>
+            </a>
+            <a href="tel:+917268854610">
+              <FiPhone />
+              <span>Call <small>+91 72688 54610</small></span>
+            </a>
+            <a href="https://wa.me/917268854610" target="_blank" rel="noreferrer">
+              <FiMessageCircle />
+              <span>WhatsApp <small>Message me directly</small></span>
+            </a>
+          </div>
+        </div>
+
+        <form
+          className="contact-form"
+          action="https://formsubmit.co/tabishjaved2030@gmail.com"
+          method="POST"
         >
-          <FiMail /> Start a conversation <FiArrowUpRight />
-        </Motion.a>
+          <input type="hidden" name="_subject" value="New portfolio enquiry" />
+          <input type="hidden" name="_template" value="table" />
+          <input
+            type="hidden"
+            name="_next"
+            value="https://my-portfolio-uipf.vercel.app/?contact=sent#contact"
+          />
+          <input
+            className="form-honeypot"
+            type="text"
+            name="_honey"
+            tabIndex="-1"
+            autoComplete="off"
+            aria-hidden="true"
+          />
+
+          <div className="contact-form-grid">
+            <label className="contact-field">
+              <span>Your name</span>
+              <input type="text" name="name" autoComplete="name" maxLength="100" required />
+            </label>
+            <label className="contact-field">
+              <span>Email address</span>
+              <input type="email" name="email" autoComplete="email" maxLength="254" required />
+            </label>
+            <label className="contact-field contact-field-wide">
+              <span>Message</span>
+              <textarea name="message" rows="5" maxLength="3000" required />
+            </label>
+          </div>
+
+          <Motion.button
+            className="button-primary"
+            type="submit"
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            Send message <FiArrowUpRight />
+          </Motion.button>
+          <p className="contact-form-note">
+            Delivered by FormSubmit. Your name, email, and message are shared with that service
+            to send this enquiry. Spam protection remains enabled.
+          </p>
+        </form>
       </div>
     </section>
   )
@@ -552,6 +673,7 @@ function Footer() {
       <div className="footer-socials">
         <a href="https://www.linkedin.com/in/tabish-javed/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="https://github.com/tabish-27" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="tel:+917268854610">Phone</a>
         <a href="mailto:tabishjaved2030@gmail.com">Email</a>
       </div>
     </footer>
@@ -560,13 +682,29 @@ function Footer() {
 
 function Portfolio() {
   const root = useRef(null)
+  const audioContextRef = useRef(null)
   const [showBackToTop, setShowBackToTop] = useState(false)
+  const [soundEnabled, setSoundEnabled] = useState(true)
 
   useLayoutEffect(() => {
     const rootElement = root.current
     if (!rootElement || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined
 
     const context = gsap.context(() => {
+      const intro = gsap.timeline({ delay: 0.16, defaults: { ease: 'power3.out' } })
+      intro
+        .fromTo(
+          '.hero-visual',
+          { autoAlpha: 0, y: 24, scale: 0.96 },
+          { autoAlpha: 1, y: 0, scale: 1, duration: 1.05 },
+        )
+        .fromTo(
+          '.scene-badge',
+          { autoAlpha: 0, x: -14 },
+          { autoAlpha: 1, x: 0, duration: 0.5 },
+          '-=0.36',
+        )
+
       gsap.utils.toArray('[data-reveal]').forEach((element) => {
         gsap.fromTo(
           element,
@@ -584,9 +722,38 @@ function Portfolio() {
           },
         )
       })
+
+      gsap.utils.toArray('[data-gsap-stagger]').forEach((container) => {
+        const items = Array.from(container.children)
+        if (!items.length) return
+
+        gsap.fromTo(
+          items,
+          { autoAlpha: 0, y: 18 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.58,
+            stagger: 0.08,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: container,
+              start: 'top 88%',
+              once: true,
+            },
+          },
+        )
+      })
     }, rootElement)
 
     return () => context.revert()
+  }, [])
+
+  useEffect(() => () => {
+    const audioContext = audioContextRef.current
+    if (audioContext && audioContext.state !== 'closed') {
+      void audioContext.close()
+    }
   }, [])
 
   useEffect(() => {
@@ -600,13 +767,47 @@ function Portfolio() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+  const playUiClick = () => {
+    const AudioContextConstructor = window.AudioContext || window.webkitAudioContext
+    if (!AudioContextConstructor) return
+
+    const audioContext = audioContextRef.current || new AudioContextConstructor()
+    audioContextRef.current = audioContext
+    if (audioContext.state === 'suspended') {
+      audioContext.resume().catch((error) => {
+        console.warn('Click sounds could not be started.', error)
+        setSoundEnabled(false)
+      })
+    }
+
+    const oscillator = audioContext.createOscillator()
+    const gain = audioContext.createGain()
+    const now = audioContext.currentTime
+    oscillator.type = 'sine'
+    oscillator.frequency.setValueAtTime(740, now)
+    oscillator.frequency.exponentialRampToValueAtTime(540, now + 0.06)
+    gain.gain.setValueAtTime(0.0001, now)
+    gain.gain.exponentialRampToValueAtTime(0.018, now + 0.006)
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.07)
+    oscillator.connect(gain)
+    gain.connect(audioContext.destination)
+    oscillator.start(now)
+    oscillator.stop(now + 0.075)
+  }
+
+  const handleUiClick = (event) => {
+    if (!soundEnabled || !(event.target instanceof Element)) return
+    if (event.target.closest('a, button, [role="button"]')) playUiClick()
+  }
+
   return (
-    <div className="portfolio-shell" ref={root}>
-      <Header />
+    <div className="portfolio-shell" ref={root} onClickCapture={handleUiClick}>
+      <Header soundEnabled={soundEnabled} onToggleSound={() => setSoundEnabled((enabled) => !enabled)} />
       <main>
         <Hero />
         <About />
         <Experience />
+        <Skills />
         <Projects />
         <Impact />
         <Education />

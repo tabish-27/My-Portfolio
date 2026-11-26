@@ -1,6 +1,80 @@
 const projects = {
   allProject: [
-    // ─── PROFESSIONAL PROJECTS (6) ────────────────────────────────────────
+    {
+      image: "/project-previews/uk-international.jpg",
+      title: "UK International | Official Academy Website",
+      description:
+        "The official UK International beauty and makeup academy website, presenting its training programmes, courses, and enquiry paths.",
+      sourcecode: null,
+      livelink: "https://uk-international.com/",
+      teckstack: ["Academy Website", "Course Discovery", "Admissions"],
+      status: "LIVE",
+      category: "professional",
+      type: "Official Website",
+    },
+    {
+      image: "/project-previews/beautywellnessjobs.jpg",
+      title: "BeautyWellnessJobs | Beauty & Wellness Careers",
+      description:
+        "A job and freelance platform connecting beauty and wellness professionals with salons, recruiters, and new opportunities.",
+      sourcecode: null,
+      livelink: "https://beautywellnessjobs.com/",
+      teckstack: ["Job Platform", "Freelance Listings", "Beauty & Wellness"],
+      status: "LIVE",
+      category: "professional",
+      type: "Job Platform",
+    },
+    {
+      image: "/project-previews/ukbeautyschool.jpg",
+      title: "UKBeautySchool.in | Student Digital Portfolios",
+      description:
+        "A digital portfolio service for academy students and graduates to showcase their work, services, and prices, and accept bookings on WhatsApp.",
+      sourcecode: null,
+      livelink: "https://ukbeautyschool.in/",
+      teckstack: ["Digital Portfolios", "Student Profiles", "WhatsApp Booking"],
+      status: "LIVE",
+      category: "professional",
+      type: "Portfolio Platform",
+    },
+    {
+      image: "/project-previews/reviews-voice.jpg",
+      title: "UK International | AI Voice Review System",
+      description:
+        "A voice-first review flow where visitors choose a branch, speak their experience, convert it to text, and rate and submit their review.",
+      sourcecode: null,
+      livelink: "https://reviews.ukinternationallondonbeautyschool.com/",
+      teckstack: ["Voice Reviews", "Speech-to-Text", "Branch Selection"],
+      status: "LIVE",
+      category: "professional",
+      type: "Voice Review System",
+    },
+    {
+      image: "/project-previews/svagrham.jpg",
+      title: "Svagrham | Real Estate Advisory",
+      description:
+        "Freelance real-estate web work spanning Bangalore and Delhi-NCR campaigns, with the live site focused on property discovery and enquiries.",
+      sourcecode: null,
+      livelink: "https://svagrham.com/",
+      teckstack: ["Real Estate", "Property Discovery", "Lead Generation"],
+      status: "LIVE",
+      category: "professional",
+      type: "Freelance Website",
+    },
+    {
+      image: null,
+      previewMark: "CP",
+      previewTitle: "Local-first career copilot",
+      title: "Career-Pilot | Local-First Job Discovery",
+      description:
+        "A local-first job discovery and preparation tool with cached requirement extraction and explainable job-match scoring. The repository is private and has no hosted demo.",
+      sourcecode: null,
+      livelink: null,
+      teckstack: ["Python", "FastAPI", "Explainable Matching", "Local-First"],
+      status: "PRIVATE",
+      category: "personal",
+      type: "Local Tool",
+    },
+    // Existing professional projects
     {
       image: "/myhireshield-thumb.png",
       title: "MyHireShield | MERN SAAS Platform",
@@ -79,7 +153,7 @@ const projects = {
       period: "2025",
       type: "Event Page",
     },
-    // ─── PERSONAL PROJECTS (3) ───────────────────────────────────────────
+    // Existing personal projects
     {
       image: "/codecompete-screenshot.png",
       title: "CodeCompete | Competitive Coding Platform",
@@ -118,6 +192,18 @@ const projects = {
       category: "personal",
       period: "2024",
       type: "AI/ML",
+    },
+    {
+      image: "/project-previews/myhomz.jpg",
+      title: "MyHomz | Noida & Delhi-NCR Property Pages",
+      description:
+        "Freelance property landing-page work for Noida and Delhi-NCR audiences; the public site presents regional property consulting services.",
+      sourcecode: null,
+      livelink: "https://myhomz.com/",
+      teckstack: ["Real Estate", "Property Consulting", "Noida", "Delhi NCR"],
+      status: "LIVE",
+      category: "personal",
+      type: "Freelance Website",
     },
   ],
 };

@@ -212,6 +212,32 @@ button {
   background: rgba(216, 252, 99, 0.07);
 }
 
+.sound-toggle {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 11px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: rgba(243, 241, 233, 0.035);
+  color: #a4a69b;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 600;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.sound-toggle:hover,
+.sound-toggle.is-on {
+  border-color: rgba(216, 252, 99, 0.35);
+  color: var(--accent);
+}
+
+.sound-toggle svg {
+  font-size: 14px;
+}
+
 .menu-toggle {
   display: none;
   width: 42px;
@@ -700,6 +726,25 @@ button {
   background: var(--accent);
 }
 
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.skill-category {
+  min-width: 0;
+  padding: clamp(20px, 3vw, 30px);
+}
+
+.skill-category h3 {
+  margin: 0 0 18px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
 .experience-card {
   position: relative;
   display: grid;
@@ -839,6 +884,52 @@ button {
   transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 450ms ease;
 }
 
+.project-preview-placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 10px;
+  padding: 30px;
+  background:
+    radial-gradient(circle at 75% 30%, rgba(216, 252, 99, 0.2), transparent 34%),
+    linear-gradient(135deg, #24291c, #11130f 72%);
+  color: var(--paper);
+}
+
+.project-preview-mark {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 1px solid rgba(216, 252, 99, 0.48);
+  border-radius: 17px;
+  background: rgba(216, 252, 99, 0.1);
+  color: var(--accent);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.project-preview-placeholder strong,
+.project-preview-placeholder small {
+  position: relative;
+  z-index: 1;
+}
+
+.project-preview-placeholder strong {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(18px, 2.4vw, 26px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.project-preview-placeholder small {
+  color: #b6b9aa;
+  font-size: 10px;
+}
+
 .project-card:hover .project-image-wrap img {
   filter: saturate(1.08);
   transform: scale(1.045);
@@ -889,6 +980,14 @@ button {
   border-radius: 50%;
   background: #d9ff83;
   content: '';
+}
+
+.project-status.is-private {
+  color: #ffd39e;
+}
+
+.project-status.is-private::before {
+  background: #ffb36b;
 }
 
 .project-info {
@@ -1058,6 +1157,10 @@ button {
 
 .contact-panel {
   position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(26px, 5vw, 64px);
   overflow: hidden;
   padding: clamp(30px, 7vw, 76px);
   border: 1px solid rgba(216, 252, 99, 0.24);
@@ -1065,6 +1168,13 @@ button {
   background:
     radial-gradient(ellipse at 100% 0%, rgba(216, 252, 99, 0.14), transparent 50%),
     linear-gradient(130deg, #1d2017, #151612 65%);
+}
+
+.contact-copy,
+.contact-form {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
 }
 
 .contact-panel::after {
@@ -1106,6 +1216,112 @@ button {
   position: relative;
   z-index: 1;
   margin-top: 26px;
+}
+
+.contact-links {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #e4e3d9;
+  font-size: 11px;
+}
+
+.contact-links a > svg {
+  flex: 0 0 auto;
+  color: var(--accent);
+  font-size: 15px;
+}
+
+.contact-links small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+  padding: clamp(18px, 3vw, 28px);
+  border: 1px solid rgba(243, 241, 233, 0.1);
+  border-radius: 18px;
+  background: rgba(12, 13, 11, 0.38);
+}
+
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.contact-field {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+  color: #c9cabe;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.contact-field-wide {
+  grid-column: 1 / -1;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1px solid rgba(243, 241, 233, 0.13);
+  border-radius: 10px;
+  outline: none;
+  background: rgba(243, 241, 233, 0.045);
+  color: var(--paper);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.contact-field textarea {
+  min-height: 130px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: rgba(216, 252, 99, 0.58);
+  box-shadow: 0 0 0 3px rgba(216, 252, 99, 0.08);
+}
+
+.contact-form .button-primary {
+  justify-self: start;
+  margin-top: 0;
+  cursor: pointer;
+}
+
+.contact-form-note {
+  max-width: none !important;
+  margin: 0 !important;
+  color: #96988e !important;
+  font-size: 9px !important;
+  line-height: 1.65 !important;
+}
+
+.form-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
 .site-footer {
@@ -1190,6 +1406,10 @@ button {
     gap: 24px;
   }
 
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
   .impact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1211,6 +1431,16 @@ button {
   .brand-monogram {
     width: 34px;
     height: 34px;
+  }
+
+  .sound-toggle {
+    width: 38px;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .sound-toggle-label {
+    display: none;
   }
 
   .page-section {
@@ -1315,6 +1545,15 @@ button {
 
   .project-grid {
     grid-template-columns: 1fr;
+  }
+
+  .skill-groups,
+  .contact-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-field-wide {
+    grid-column: auto;
   }
 
   .project-image-wrap {
